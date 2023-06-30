@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sophireth</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 10px;
+    }
+    
+    .grid img {
+      width: 100%;
+      height: auto;
+    }
+    
+    body {
+      background-image: url("./imgs/static.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    .hover-image:hover {
+      content: url(https://i.imgur.com/HMpzX2o.png);
+    }
+  </style>
+</head>
+<body>
+  <audio src="./mp3/index.mp3" autoplay loop></audio>
+  <div class="grid" id="image-grid">
+    <img src="./imgs/1.jpg" alt="Image 1" class="hover-image">
+
+    <a href="./html/seismeses.html">
+      <img src="./imgs/2.jpg" alt="Image 2">
+    </a>
+    <a href="./html/todoslosdias.html">
+      <img src="./imgs/3.jpg" alt="Image 3">
+    </a>    
+    <a href="./html/nuncasupe.html">
+      <img src="./imgs/4.jpg" alt="Image 4">
+    </a>
+    <a href="./html/algomedice.html">
+      <img src="./imgs/5.jpg" alt="Image 5">
+    </a>
+    <a href="./html/internet.html">
+      <img src="./imgs/6.jpg" alt="Image 6">
+    </a>
+    <a href="./html/finalmente.html">
+      <img src="./imgs/7.jpg" alt="Image 7">
+    </a>
+    <a href="./html/mivida.html">
+      <img src="./imgs/8.jpg" alt="Image 8">
+    </a>
+    <a href="./html/sofia.html">
+      <img src="./imgs/9.jpg" alt="Image 9">
+    </a>
+    <a href="./html/inedito.html">
+      <img src="./imgs/10.jpg" alt="Image 10">
+    </a>
+    <a href="./html/ultimamente.html">
+      <img src="./imgs/11.jpg" alt="Image 11">
+    </a>
+    <a href="./html/unjoven.html">
+      <img src="./imgs/12.jpg" alt="Image 12">
+    </a>
+    <a href="./html/cienciaficcion.html">
+      <img src="./imgs/13.jpg" alt="Image 13">
+    </a>
+    <a href="./html/palabrapensamiento.html">
+      <img src="./imgs/14.jpg" alt="Image 14">
+    </a>
+    <a href="./html/esposible.html">
+      <img src="./imgs/15.jpg" alt="Image 15">
+    </a>
+  </div>
+
+  <script>
+    function shuffleImages() {
+      const grid = document.getElementById('image-grid');
+      const images = Array.from(grid.children).slice(1); // Exclude the first image
+
+      // Shuffle the images
+      for (let i = images.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [images[i], images[j]] = [images[j], images[i]];
+      }
+      
+      // Reorder the shuffled images in the grid
+      images.forEach((image) => grid.appendChild(image));
+    }
+
+    // Shuffle the images on page load
+    shuffleImages();
+  </script>
+</body>
+</html>
